@@ -1,0 +1,15 @@
+{
+  "name": "pulse2",
+  "version": "1.0.0",
+  "description": "widget validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mIo",
+  "license": "ISC",
+  "devDependencies": {
+    "amphtml-validator": "^1.0.35"
+  },
+  "dependencies": {}
+}

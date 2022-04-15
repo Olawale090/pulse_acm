@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html amp lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="amp-script-src" content="sha384-qdYQLoj2SRKXBu33BwIoyRKorw0b0nQ8UPIoIMc9wL8KVLcKODSAK52yNGQNS_vN"/>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js" async></script>
+    <link rel="canonical" href="https://preview.amp.dev/documentation/guides-and-tutorials/develop/interactivity_guide/index.example.3.html">
+  
+
+    <script async src="app.js"></script>
+    <link rel="stylesheet" href="styles/app.css">
+
+    <style amp-custom>
+    
+        .clickedButton {
+          background-color: green;
+        }
+
+        .notifier_event{
+            display: block;
+        }
+      
+    </style>
+
+
+
+    <title>Widget</title>
+
+</head>
+<body>
+
+    <section class="widget_carrier">
+
+            <form class="widget" action="">
+
+                <label class="widget_title" for="">Newsletter</label>
+
+                <div class="widget_component">
+                    <input class="widget_input username" type="text" placeholder="Please enter Username">
+                    <input class="widget_input email" type="email" placeholder="Please enter Email" required>
+                    <input type="button" class="widget_btn" value="Submit" > 
+                </div>
+
+                <amp-script width="200" height="100" data-ampdevmode script="hello-world" [class]="scriptStyle">
+                    <div class="notifier">Please enter your username and email </div>
+                </amp-script>
+
+                
+                <script id="hello-world" type="text/javascript" target="amp-script">
+                    
+                    const btn = document.querySelector('.widget_btn');
+                    const notifier = document.querySelector('.notifier');
+                    const username = document.querySelector(".username");
+                    const email = document.querySelector(".email");
+
+                    btn.addEventListener('click', () => {
+                        
+                        if(username.value == "" || email.value ==""){
+
+                            // AMP.setState({ scriptStyle: "notifier_event" });
+                            notifier.style.display = "block";
+                            navigator.vibrate(800,400,800);
+                            
+                        }
+                      
+                    });
+
+                </script> 
+
+
+            </form>
+  
+    </section>
+</body>
+</html>

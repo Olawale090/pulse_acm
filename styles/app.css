@@ -1,0 +1,82 @@
+html,body{
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.widget_carrier{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.575);
+    background-image: url("/assets/images/pulse_icons.jpeg");
+    background-position-y: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    padding: 1rem;
+}
+
+.widget{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.widget_component{
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width:400px) {
+
+    .widget_component{
+        flex-direction: column;
+    }
+    
+}
+
+.widget_title{
+    color: crimson;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+.widget_input{
+    border: none;
+    height: 2.8em;
+    width: 20em;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+}
+
+.widget_btn{
+    height: 2.8em;
+    width: 6em;
+    border: none;
+    background-color: rgb(226, 92, 39);
+    color: white;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:400px) {
+    .widget_btn{
+        margin-left: 1.2em;
+    }
+}
+
+.notifier{
+    color: khaki;
+    text-align: center;
+    width: fit-content;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: none;
+}
